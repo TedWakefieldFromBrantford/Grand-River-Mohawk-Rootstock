@@ -1,0 +1,8 @@
+<h1>Mohawk Quiz</h1>
+<ul>
+{% for l in lessons %}
+  <li><a href="{{ url_for('quiz', lesson_id=l.id) }}">Week {{ l.week_number }} — {{ l.title }}</a></li>
+{% else %}
+  <li>No lessons seeded. Run <code>python seed.py</code>.</li>
+{% endfor %}
+</ul>

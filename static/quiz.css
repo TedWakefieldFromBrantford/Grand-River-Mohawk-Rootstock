@@ -1,0 +1,8 @@
+body { font: 18px/1.5 system-ui, sans-serif; max-width: 40em; margin: 3em auto; padding: 0 1em; }
+.prompt { font-size: 1.6em; margin: 0 0 .3em; }
+.hint { color: #888; font-size: .85em; margin: 0 0 1em; }
+input.given { font-size: 1.1em; padding: .4em; width: 100%; box-sizing: border-box; }
+button { font-size: 1em; padding: .4em 1em; margin-top: .8em; }
+.feedback { min-height: 1.5em; }
+.feedback.near { color: #a06a00; }
+.feedback.hit  { color: #2a7a2a; }

@@ -1,0 +1,57 @@
+{
+  "batch_id": "batch-002-all-verbs",
+  "unit": 2,
+  "lesson_title": "Liking, Loving, Knowing, Hating",
+  "source_pages": "p. 44-49",
+  "verbs": [
+    {
+      "target_verb_root": "-nón:we's",
+      "target_verb_gloss": "like",
+      "forms": [
+        {"form": "wakénon:we's", "form_type": "transitive", "subject": "1sg", "object": "3n", "english_gloss": "I like it"},
+        {"form": "sanon:we's", "form_type": "transitive", "subject": "2sg", "object": "3n", "english_gloss": "you like it"},
+        {"form": "ronón:we's", "form_type": "transitive", "subject": "3m", "object": "3n", "english_gloss": "he likes it"},
+        {"form": "yonón:we's", "form_type": "transitive", "subject": "3f", "object": "3n", "english_gloss": "she likes it"},
+        {"form": "katatenón:we's", "form_type": "reflexive", "subject": "1sg", "object": "1sg", "english_gloss": "I like myself"},
+        {"form": "hsatatenón:we's", "form_type": "reflexive", "subject": "2sg", "object": "2sg", "english_gloss": "you like yourself"},
+        {"form": "ratatenón:we's", "form_type": "reflexive", "subject": "3m", "object": "3m", "english_gloss": "he likes himself"},
+        {"form": "yonatatenón:we's", "form_type": "reflexive", "subject": "3f", "object": "3f", "english_gloss": "she likes herself"},
+        {"form": "tetyataténon:we's", "form_type": "reciprocal", "subject": "1du.incl", "object": "1du.incl", "english_gloss": "you & I like each other"},
+        {"form": "teyakyataténon:we's", "form_type": "reciprocal", "subject": "1du.excl", "object": "1du.excl", "english_gloss": "s.o. & I like each other"}
+      ]
+    },
+    {
+      "target_verb_root": "-norónhkwa",
+      "target_verb_gloss": "love",
+      "forms": [
+        {"form": "wakénorónhkwa", "form_type": "transitive", "subject": "1sg", "object": "3n", "english_gloss": "I love it"},
+        {"form": "sanorónhkwa", "form_type": "transitive", "subject": "2sg", "object": "3n", "english_gloss": "you love it"},
+        {"form": "ronorónhkwa", "form_type": "transitive", "subject": "3m", "object": "3n", "english_gloss": "he loves it"},
+        {"form": "yonorónhkwa", "form_type": "transitive", "subject": "3f", "object": "3n", "english_gloss": "she loves it"},
+        {"form": "katatenorónhkwa", "form_type": "reflexive", "subject": "1sg", "object": "1sg", "english_gloss": "I love myself"}
+      ]
+    },
+    {
+      "target_verb_root": "-yenterì:ri",
+      "target_verb_gloss": "know",
+      "forms": [
+        {"form": "wakentyenterì:ri", "form_type": "transitive", "subject": "1sg", "object": "3n", "english_gloss": "I know it"},
+        {"form": "satyenterì:ri", "form_type": "transitive", "subject": "2sg", "object": "3n", "english_gloss": "you know it"},
+        {"form": "ronyenterì:ri", "form_type": "transitive", "subject": "3m", "object": "3n", "english_gloss": "he knows it"},
+        {"form": "yonyenterì:ri", "form_type": "transitive", "subject": "3f", "object": "3n", "english_gloss": "she knows it"},
+        {"form": "katatyenterì:ri", "form_type": "reflexive", "subject": "1sg", "object": "1sg", "english_gloss": "I know myself"}
+      ]
+    },
+    {
+      "target_verb_root": "-kons",
+      "target_verb_gloss": "hate",
+      "forms": [
+        {"form": "wakénkons", "form_type": "transitive", "subject": "1sg", "object": "3n", "english_gloss": "I hate it"},
+        {"form": "sahskons", "form_type": "transitive", "subject": "2sg", "object": "3n", "english_gloss": "you hate it"},
+        {"form": "rohkons", "form_type": "transitive", "subject": "3m", "object": "3n", "english_gloss": "he hates it"},
+        {"form": "yohskons", "form_type": "transitive", "subject": "3f", "object": "3n", "english_gloss": "she hates it"},
+        {"form": "kataténkons", "form_type": "reflexive", "subject": "1sg", "object": "1sg", "english_gloss": "I hate myself"}
+      ]
+    }
+  ]
+}

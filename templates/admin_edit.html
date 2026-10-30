@@ -1,0 +1,284 @@
+<style>
+  .admin-table { width: 100%; border-collapse: collapse; margin-bottom: 1em; }
+  .admin-table th, .admin-table td { padding: 8px; text-align: left; border-bottom: 1px solid #ddd; }
+  .admin-table input, .admin-table select { width: 95%; padding: 4px; font-family: inherit; }
+  .admin-table th { background-color: #f4f4f4; }
+  .admin-form button { padding: 8px 16px; cursor: pointer; margin-top: 1em; }
+  
+  .filter-bar { background: #eef; padding: 15px; border-radius: 5px; margin-bottom: 20px; display: flex; gap: 15px; align-items: center; flex-wrap: wrap; }
+  .filter-bar label { font-weight: bold; font-size: 0.9em; }
+  .filter-bar select { padding: 5px; font-family: inherit; }
+  .filter-bar button { margin-top: 0; padding: 6px 12px; background: #4CAF50; color: white; border: none; border-radius: 3px; cursor: pointer; }
+  .filter-bar button:hover { background: #45a049; }
+  .badge { background: #ddd; padding: 2px 6px; border-radius: 3px; font-size: 0.8em; font-family: monospace; }
+</style>
+
+<h1>{% if lesson %}Edit Lesson: Week {{ lesson.week_number }}{% else %}Edit All Data{% endif %}</h1>
+<p>
+  <a href="{{ url_for('quiz', lesson_id=lesson.id) if lesson else '#' }}">Go to Quiz →</a> | 
+  <a href="{{ url_for('index') }}">Home</a>
+</p>
+
+<form method="POST" class="admin-form">
+  
+  <!-- ========================================== -->
+  <!-- VOCABULARY SECTION -->
+  <!-- ========================================== -->
+  <h2>Vocabulary ({{ vocab|length }})</h2>
+  <table id="vocab-table" class="admin-table">
+    <thead>
+      <tr>
+        <th>Mohawk</th>
+        <th>English</th>
+        <th>Category</th>
+        <th>Class / Stem</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for v in vocab %}
+      <tr>
+        <td><input name="mohawk" value="{{ v.mohawk }}"></td>
+        <td><input name="english" value="{{ v.english }}"></td>
+        <td><input name="category" value="{{ v.category }}"></td>
+        <td><input name="class_or_stem" value="{{ v.class_or_stem }}"></td>
+        <td><input name="vocab_notes" value="{{ v.notes }}"></td>
+      </tr>
+      {% endfor %}
+      
+      {% for _ in range(5) %}
+      <tr>
+        <td><input name="mohawk" placeholder="New Mohawk"></td>
+        <td><input name="english" placeholder="New English"></td>
+        <td><input name="category" placeholder="animal, colour..."></td>
+        <td><input name="class_or_stem" placeholder="A-stem, C-stem..."></td>
+        <td><input name="vocab_notes" placeholder="Notes..."></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <button type="button" onclick="addVocabRow()">+ Add 5 Vocab Rows</button>
+
+  <hr style="margin: 2em 0;">
+
+  <!-- ========================================== -->
+  <!-- VERB ROOTS SECTION -->
+  <!-- ========================================== -->
+  <h2>Verb Roots ({{ verbs|length }})</h2>
+  <table id="verb-table" class="admin-table">
+    <thead>
+      <tr>
+        <th>Root</th>
+        <th>Gloss</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for v in verbs %}
+      <tr>
+        <input type="hidden" name="verb_id" value="{{ v.id }}">
+        <td><input name="verb_root" value="{{ v.root }}"></td>
+        <td><input name="verb_gloss" value="{{ v.gloss }}"></td>
+        <td><input name="verb_notes" value="{{ v.notes }}"></td>
+      </tr>
+      {% endfor %}
+      
+      {% for _ in range(2) %}
+      <tr>
+        <td><input name="verb_root" placeholder="New Root (e.g. -nón:we's)"></td>
+        <td><input name="verb_gloss" placeholder="Gloss (e.g. like)"></td>
+        <td><input name="verb_notes" placeholder="Notes..."></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <button type="button" onclick="addVerbRow()">+ Add Verb Row</button>
+
+  <hr style="margin: 2em 0;">
+
+  <!-- ========================================== -->
+  <!-- VERB FORMS SECTION (THE MATRIX) -->
+  <!-- ========================================== -->
+  <h2>Verb Forms</h2>
+  
+  <div class="filter-bar">
+    <label>Filter Forms:</label>
+    <select id="filter-verb" onchange="filterForms()">
+      <option value="">-- All Verbs --</option>
+      {% for v in verbs %}
+        <option value="{{ v.id }}">{{ v.root }} ({{ v.gloss }})</option>
+      {% endfor %}
+    </select>
+
+    <select id="filter-subject" onchange="filterForms()">
+      <option value="">-- Any Subject --</option>
+      <option value="1sg">1sg</option> <option value="2sg">2sg</option>
+      <option value="3m">3m</option> <option value="3f">3f</option> <option value="3n">3n</option>
+      <option value="1du">1du (incl)</option> <option value="1du.excl">1du.excl</option>
+      <option value="2du">2du</option> <option value="2du.m">2du.m</option> <option value="2du.f">2du.f</option>
+      <option value="1pl">1pl (incl)</option> <option value="1pl.excl">1pl.excl</option>
+      <option value="2pl">2pl</option>
+      <option value="3pl.m">3pl.m</option> <option value="3pl.f">3pl.f</option>
+    </select>
+
+    <select id="filter-object" onchange="filterForms()">
+      <option value="">-- Any Object --</option>
+      <option value="1sg">1sg</option> <option value="2sg">2sg</option>
+      <option value="3m">3m</option> <option value="3f">3f</option> <option value="3n">3n</option>
+      <option value="3m/i">3m/i (inanimate)</option>
+      <option value="1du">1du (incl)</option> <option value="1du.excl">1du.excl</option>
+      <option value="2du">2du</option> <option value="2du.m">2du.m</option> <option value="2du.f">2du.f</option>
+      <option value="1pl">1pl (incl)</option> <option value="1pl.excl">1pl.excl</option>
+      <option value="2pl">2pl</option>
+      <option value="3pl.m">3pl.m</option> <option value="3pl.f">3pl.f</option>
+    </select>
+    
+    <button type="button" onclick="addFormRow()">+ Add Missing Form</button>
+    <span id="form-count" style="margin-left: auto; font-size: 0.9em; color: #666;"></span>
+  </div>
+
+  <table id="forms-table" class="admin-table">
+    <thead>
+      <tr>
+        <th>Verb</th>
+        <th>Form (Mohawk)</th>
+        <th>Type</th>
+        <th>Subject</th>
+        <th>Object</th>
+        <th>English Gloss</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for form in forms %}
+      <tr class="form-row" 
+          data-verb="{{ form.verb_id }}" 
+          data-subject="{{ form.subject }}" 
+          data-object="{{ form.object }}">
+        <input type="hidden" name="form_id" value="{{ form.id }}">
+        <td>
+          <select name="form_verb_id">
+            {% for v in verbs %}
+              <option value="{{ v.id }}" {% if form.verb_id == v.id %}selected{% endif %}>{{ v.root }}</option>
+            {% endfor %}
+          </select>
+        </td>
+        <td><input name="form_mohawk" value="{{ form.form }}"></td>
+        <td><input name="form_type" value="{{ form.form_type }}" style="width: 80px;"></td>
+        <td><input name="form_subject" value="{{ form.subject }}" style="width: 70px;"></td>
+        <td><input name="form_object" value="{{ form.object }}" style="width: 70px;"></td>
+        <td><input name="form_gloss" value="{{ form.english_gloss }}"></td>
+        <td><input name="form_notes" value="{{ form.notes }}" placeholder="e.g. p.40"></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  
+  <div style="margin-top: 2em;">
+    <button type="submit">Save All Changes</button>
+  </div>
+</form>
+
+<script>
+// --- DYNAMIC ROW ADDERS ---
+function addVocabRow() {
+  const tbody = document.querySelector("#vocab-table tbody");
+  for (let i = 0; i < 5; i++) {
+    const newRow = document.createElement("tr");
+    newRow.innerHTML = `
+      <td><input name="mohawk" placeholder="New Mohawk"></td>
+      <td><input name="english" placeholder="New English"></td>
+      <td><input name="category" placeholder="animal, colour..."></td>
+      <td><input name="class_or_stem" placeholder="A-stem, C-stem..."></td>
+      <td><input name="vocab_notes" placeholder="Notes..."></td>
+    `;
+    tbody.appendChild(newRow);
+  }
+}
+
+function addVerbRow() {
+  const tbody = document.querySelector("#verb-table tbody");
+  const newRow = document.createElement("tr");
+  newRow.innerHTML = `
+    <td><input name="verb_root" placeholder="New Root..."></td>
+    <td><input name="verb_gloss" placeholder="Gloss..."></td>
+    <td><input name="verb_notes" placeholder="Notes..."></td>
+  `;
+  tbody.appendChild(newRow);
+}
+
+// --- FORM MATRIX LOGIC ---
+function filterForms() {
+  const fVerb = document.getElementById("filter-verb").value;
+  const fSubj = document.getElementById("filter-subject").value;
+  const fObj = document.getElementById("filter-object").value;
+  const rows = document.querySelectorAll(".form-row");
+  
+  let visibleCount = 0;
+  
+  rows.forEach(row => {
+    let match = true;
+    if (fVerb && row.dataset.verb !== fVerb) match = false;
+    if (fSubj && row.dataset.subject !== fSubj) match = false;
+    if (fObj && row.dataset.object !== fObj) match = false;
+    
+    if (match) {
+      row.style.display = "";
+      visibleCount++;
+    } else {
+      row.style.display = "none";
+    }
+  });
+  
+  document.getElementById("form-count").innerText = `Showing ${visibleCount} form(s)`;
+}
+
+function addFormRow() {
+  const tbody = document.querySelector("#forms-table tbody");
+  const fVerb = document.getElementById("filter-verb").value;
+  const fSubj = document.getElementById("filter-subject").value;
+  const fObj = document.getElementById("filter-object").value;
+  
+  if (!fVerb) {
+    alert("Please select a Verb in the filter bar first.");
+    return;
+  }
+
+  const newRow = document.createElement("tr");
+  newRow.className = "form-row";
+  newRow.dataset.verb = fVerb;
+  newRow.dataset.subject = fSubj;
+  newRow.dataset.object = fObj;
+  
+  // Build the verb dropdown options
+  let optionsHtml = "";
+  document.querySelectorAll("#filter-verb option").forEach(opt => {
+    if (opt.value) {
+      optionsHtml += `<option value="${opt.value}" ${opt.value === fVerb ? 'selected' : ''}>${opt.text}</option>`;
+    }
+  });
+
+  newRow.innerHTML = `
+    <td>
+      <select name="form_verb_id">
+        ${optionsHtml}
+      </select>
+    </td>
+    <td><input name="form_mohawk" placeholder="New form..."></td>
+    <td><input name="form_type" value="transitive" style="width: 80px;"></td>
+    <td><input name="form_subject" value="${fSubj}" style="width: 70px;"></td>
+    <td><input name="form_object" value="${fObj}" style="width: 70px;"></td>
+    <td><input name="form_gloss" placeholder="English gloss"></td>
+    <td><input name="form_notes" placeholder="e.g. inferred"></td>
+  `;
+  tbody.appendChild(newRow);
+  
+  // Reset filters to show the new row
+  document.getElementById("filter-subject").value = fSubj;
+  document.getElementById("filter-object").value = fObj;
+  filterForms();
+}
+
+// Run filter on page load to set the count
+document.addEventListener("DOMContentLoaded", filterForms);
+</script>

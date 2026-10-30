@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Mohawk Quiz</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='quiz.css') }}">
+</head>
+<body>
+<main>{{ body|safe }}</main>
+<script src="{{ url_for('static', filename='quiz.js') }}"></script>
+</body>
+</html>

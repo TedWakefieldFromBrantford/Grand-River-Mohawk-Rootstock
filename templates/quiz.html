@@ -1,0 +1,16 @@
+<h1>Practice</h1>
+<div id="quiz" data-session="{{ session_id }}" data-mode="{{ mode }}">
+  {% for q in questions %}
+  <div class="card" data-idx="{{ loop.index0 }}"
+       data-answer="{{ q.answer|e }}" style="display:none">
+    <p class="prompt">{{ q.prompt }}</p>
+    {% if q.hint %}<p class="hint">prefix class: {{ q.hint }}</p>{% endif %}
+    <input type="text" class="given" autocomplete="off" autocapitalize="off">
+    <button class="check">Check</button>
+    <p class="feedback"></p>
+  </div>
+  {% endfor %}
+  <p id="done" style="display:none">
+    <a href="/summary/{{ session_id }}">See summary</a>
+  </p>
+</div>

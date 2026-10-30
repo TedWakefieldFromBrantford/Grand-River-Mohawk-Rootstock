@@ -1,0 +1,256 @@
+{
+  "vocab": [
+    {
+      "mohawk": "Onekwénhtara",
+      "english": "red",
+      "category": "color",
+      "notes": "",
+      "class_or_stem": ""
+    },
+    {
+      "mohawk": "Oròn:ia",
+      "english": "blue",
+      "category": "color",
+      "notes": "",
+      "class_or_stem": ""
+    },
+    {
+      "mohawk": "Kará:ken",
+      "english": "white",
+      "category": "color",
+      "notes": "",
+      "class_or_stem": ""
+    },
+    {
+      "mohawk": "óhonte",
+      "english": "green",
+      "category": "color",
+      "notes": "",
+      "class_or_stem": ""
+    },
+    {
+      "mohawk": "onekwénhtara",
+      "english": "red",
+      "category": "color",
+      "notes": "",
+      "class_or_stem": ""
+    },
+    {
+      "mohawk": "kará:ken",
+      "english": "light/white",
+      "category": "color",
+      "notes": "",
+      "class_or_stem": ""
+    },
+    {
+      "mohawk": "kahón:tsi",
+      "english": "dark/black",
+      "category": "colour",
+      "notes": "",
+      "class_or_stem": ""
+    },
+    {
+      "mohawk": "kanekwenhtarará:ken",
+      "english": "pink",
+      "category": "color",
+      "notes": "",
+      "class_or_stem": ""
+    },
+    {
+      "mohawk": "otyarén:ta",
+      "english": "orange",
+      "category": "color",
+      "notes": "",
+      "class_or_stem": ""
+    },
+    {
+      "mohawk": "ohéhsa",
+      "english": "brown",
+      "category": "color",
+      "notes": "",
+      "class_or_stem": ""
+    },
+    {
+      "mohawk": "ata'kén:ra",
+      "english": "gray",
+      "category": "color",
+      "notes": "",
+      "class_or_stem": ""
+    },
+    {
+      "mohawk": "kanekwenhtarahón:tsi",
+      "english": "dark red/maroon",
+      "category": "color",
+      "notes": "",
+      "class_or_stem": ""
+    },
+    {
+      "mohawk": "karonhyahón:tsi",
+      "english": "dark blue",
+      "category": "color",
+      "notes": "",
+      "class_or_stem": ""
+    },
+    {
+      "mohawk": "karonhyará:ken",
+      "english": "light blue",
+      "category": "color",
+      "notes": "",
+      "class_or_stem": ""
+    },
+    {
+      "mohawk": "oharennáhta",
+      "english": "purple",
+      "category": "color",
+      "notes": "",
+      "class_or_stem": ""
+    },
+    {
+      "mohawk": "kahon'tsihstóhskon",
+      "english": "jet black",
+      "category": "color",
+      "notes": "",
+      "class_or_stem": ""
+    },
+    {
+      "mohawk": "karakenhstóhskon",
+      "english": "pure white",
+      "category": "color",
+      "notes": "",
+      "class_or_stem": ""
+    },
+    {
+      "mohawk": "kahwihstará:ken",
+      "english": "silver",
+      "category": "color",
+      "notes": "",
+      "class_or_stem": ""
+    },
+    {
+      "mohawk": "kahwihstanó:ron",
+      "english": "gold",
+      "category": "color",
+      "notes": "",
+      "class_or_stem": ""
+    },
+    {
+      "mohawk": "orlyó:ken",
+      "english": "chipmunk",
+      "category": "animal",
+      "notes": "",
+      "class_or_stem": ""
+    },
+    {
+      "mohawk": "tyonnhónhskwaron",
+      "english": "cow",
+      "category": "animal",
+      "notes": "",
+      "class_or_stem": ""
+    },
+    {
+      "mohawk": "oskennón:ton",
+      "english": "deer",
+      "category": "animal",
+      "notes": "",
+      "class_or_stem": ""
+    },
+    {
+      "mohawk": "kentsyonkshón:'a",
+      "english": "fish",
+      "category": "animal",
+      "notes": "",
+      "class_or_stem": ""
+    },
+    {
+      "mohawk": "tsitsho",
+      "english": "fox",
+      "category": "animal",
+      "notes": "",
+      "class_or_stem": ""
+    },
+    {
+      "mohawk": "kaya'tákeras",
+      "english": "goat",
+      "category": "animal",
+      "notes": "",
+      "class_or_stem": ""
+    },
+    {
+      "mohawk": "yagosá:tenhs",
+      "english": "horse",
+      "category": "animal",
+      "notes": "",
+      "class_or_stem": ""
+    },
+    {
+      "mohawk": "tsinó:wen",
+      "english": "mouse",
+      "category": "animal",
+      "notes": "",
+      "class_or_stem": ""
+    },
+    {
+      "mohawk": "tsinowakó:wa",
+      "english": "rat",
+      "category": "animal",
+      "notes": "",
+      "class_or_stem": ""
+    },
+    {
+      "mohawk": "kwa'yén:a",
+      "english": "rabbit",
+      "category": "animal",
+      "notes": "",
+      "class_or_stem": ""
+    },
+    {
+      "mohawk": "ati:ron",
+      "english": "raccoon",
+      "category": "animal",
+      "notes": "",
+      "class_or_stem": ""
+    },
+    {
+      "mohawk": "síksik",
+      "english": "sheep",
+      "category": "animal",
+      "notes": "",
+      "class_or_stem": ""
+    },
+    {
+      "mohawk": "onkwe'táko",
+      "english": "squirrel",
+      "category": "animal",
+      "notes": "",
+      "class_or_stem": ""
+    },
+    {
+      "mohawk": "aní:tas",
+      "english": "skunk",
+      "category": "animal",
+      "notes": "",
+      "class_or_stem": ""
+    },
+    {
+      "mohawk": "ó:nyare",
+      "english": "snake",
+      "category": "animal",
+      "notes": "",
+      "class_or_stem": ""
+    },
+    {
+      "mohawk": "a'nó:wara",
+      "english": "turtle",
+      "category": "animal",
+      "notes": "",
+      "class_or_stem": ""
+    },
+    {
+      "mohawk": "ohkwa:ri",
+      "english": "bear",
+      "category": "animal",
+      "notes": "",
+      "class_or_stem": ""
+    }
+  ]
+}
