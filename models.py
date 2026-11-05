@@ -117,3 +117,20 @@ class VocabFormTag(db.Model):
     __tablename__ = "vocab_form_tag"
     vocab_form_id = db.Column(db.Integer, db.ForeignKey("vocab_form.id"), primary_key=True)
     tag_id = db.Column(db.Integer, db.ForeignKey("tag.id"), primary_key=True)
+
+class Rule(db.Model):
+    __tablename__ = "rule"
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String, nullable=False, unique=True) # e.g., "negation", "yes_no_question"
+    description = db.Column(db.Text, default="")
+    # How to transform it. We'll use a JSON structure.
+    # Example: {"prefix": "yah te", "strip_initial": "i"} 
+    # or: {"prefix": "ken ", "suffix": "?", "word_order": "verb_first"}
+    transform_json = db.Column(db.JSON, nullable=False)
+class SentenceTemplate(db.Model):
+    __tablename__ = "sentence_template"
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String, nullable=False) # e.g. "Transitive Statement"
+    # The order of words in Mohawk vs English
+    # e.g. {"mohawk": ["verb", "object"], "english": ["subject", "verb", "object"]}
+    structure_json = db.Column(db.JSON, nullable=False)
