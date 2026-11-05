@@ -10,7 +10,7 @@ app.config.from_object(Config)
 db.init_app(app)
 
 
-def generate_prompt(mode="random"):
+def generate_prompt(mode="random", category="any"):
     with app.app_context():
         print("\n--- Grand River Mohawk Quiz Generator ---")
 
@@ -40,8 +40,10 @@ def generate_prompt(mode="random"):
                 subject="3f",
                 object="3m/i",
             ).first()
-            noun = random.choice(Vocab.query.filter_by(category="animal").all())
-
+            if category == "any":
+                noun = random.choice(Vocab.query.all())
+            else:
+                noun = random.choice(Vocab.query.filter_by(category=category).all())
             if not form or not noun:
                 print("Missing form or noun. Aborting.")
                 return
@@ -73,4 +75,5 @@ def generate_prompt(mode="random"):
 
 if __name__ == "__main__":
     mode_arg = sys.argv[1] if len(sys.argv) > 1 else "random"
-    generate_prompt(mode_arg)
+    category_arg = sys.argv[2] if len(sys.argv) >2 else "any"
+    generate_prompt(mode_arg, category_arg)

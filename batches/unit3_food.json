@@ -1,0 +1,364 @@
+{
+  "vocab": [
+    {
+      "mohawk": "Tekahswa:ne",
+      "english": "Pie",
+      "category": "food",
+      "notes": "Sounds like: Day-ga-swa-nay. Source: Unit 3 handout p. 243"
+    },
+    {
+      "mohawk": "Ká:hik",
+      "english": "Fruit",
+      "category": "food",
+      "notes": "Sounds like: Ga-hik. Source: Unit 3 handout p. 243"
+    },
+    {
+      "mohawk": "O'nenhare",
+      "english": "Grapes",
+      "category": "food",
+      "notes": "Sounds like: O'-nen-ha-lay. Source: Unit 3 handout p. 243"
+    },
+    {
+      "mohawk": "Niyohontehsha",
+      "english": "Strawberries",
+      "category": "food",
+      "notes": "Sounds like: Nee-yo-hoon-teh-sa. Source: Unit 3 handout p. 243"
+    },
+    {
+      "mohawk": "Sewahyó:wane",
+      "english": "Apples",
+      "category": "food",
+      "notes": "Sounds like: Say-wah-yó-wa-nay. Source: Unit 3 handout p. 243"
+    },
+    {
+      "mohawk": "É:ri",
+      "english": "Cherries",
+      "category": "food",
+      "notes": "Sounds like: Ay-lee. Source: Unit 3 handout p. 243"
+    },
+    {
+      "mohawk": "O'nénnata",
+      "english": "Potatoes",
+      "category": "food",
+      "notes": "Sounds like: O'-nen-na-da. Source: Unit 3 handout p. 243"
+    },
+    {
+      "mohawk": "Teyohyahkáhon",
+      "english": "Tomatoes",
+      "category": "food",
+      "notes": "Sounds like: Day-yoh-ya-kha-hon. Source: Unit 3 handout p. 243"
+    },
+    {
+      "mohawk": "Kátshe ká:hik",
+      "english": "Pears",
+      "category": "food",
+      "notes": "Sounds like: Gat-say ga-hik. Source: Unit 3 handout p. 243"
+    },
+    {
+      "mohawk": "Teyotahya:któn",
+      "english": "Bananas",
+      "category": "food",
+      "notes": "Sounds like: Day-yo-dah-yak-do. Source: Unit 3 handout p. 243"
+    },
+    {
+      "mohawk": "O'wáronk",
+      "english": "Meat",
+      "category": "food",
+      "notes": "Sounds like: O'-wa-lonk. Source: Unit 3 handout p. 243"
+    },
+    {
+      "mohawk": "Kaná:teronk",
+      "english": "Bread",
+      "category": "food",
+      "notes": "Sounds like: Ga-na-day-lonk. Source: Unit 3 handout p. 243"
+    },
+    {
+      "mohawk": "Onónta",
+      "english": "Milk",
+      "category": "food",
+      "notes": "Sounds like: O-noon-da. Source: Unit 3 handout p. 243"
+    },
+    {
+      "mohawk": "Otsí:nekwar nikahtehró:ten",
+      "english": "Carrots",
+      "category": "food",
+      "notes": "Sounds like: O-gee-ne-kwar nee-gah-day-lo-doh. Source: Unit 3 handout p. 243"
+    },
+    {
+      "mohawk": "Wihson ká:hik",
+      "english": "Plum",
+      "category": "food",
+      "notes": "Source: Handwritten notes p. 243"
+    },
+    {
+      "mohawk": "Watenenhstatákwas",
+      "english": "Popcorn",
+      "category": "food",
+      "notes": "Source: Handwritten notes p. 243"
+    },
+    {
+      "mohawk": "Skanekwenhtarái:yen",
+      "english": "Raspberries",
+      "category": "food",
+      "notes": "Source: Handwritten notes p. 243"
+    },
+    {
+      "mohawk": "Teyohstawinahyó:'itsis",
+      "english": "Rhubarb",
+      "category": "food",
+      "notes": "Source: Handwritten notes p. 243"
+    },
+    {
+      "mohawk": "Watenon'ónkwas",
+      "english": "Rice (white)",
+      "category": "food",
+      "notes": "Source: Handwritten notes p. 243"
+    },
+    {
+      "mohawk": "Tekahsahé'tayéhston",
+      "english": "Salad (bean)",
+      "category": "food",
+      "notes": "Source: Handwritten notes p. 243"
+    },
+    {
+      "mohawk": "Teká'nhonhsayéhston",
+      "english": "Salad (egg)",
+      "category": "food",
+      "notes": "Source: Handwritten notes p. 243"
+    },
+    {
+      "mohawk": "Tewahyayéhston",
+      "english": "Salad (fruit)",
+      "category": "food",
+      "notes": "Source: Handwritten notes p. 243"
+    },
+    {
+      "mohawk": "Tekahontayéhston",
+      "english": "Salad (garden)",
+      "category": "food",
+      "notes": "Source: Handwritten notes p. 243"
+    },
+    {
+      "mohawk": "Tekahnenna'tayéhston",
+      "english": "Salad (potato)",
+      "category": "food",
+      "notes": "Source: Handwritten notes p. 243"
+    },
+    {
+      "mohawk": "Teyohkwayó:'itsis",
+      "english": "Salt",
+      "category": "food",
+      "notes": "Source: Handwritten notes p. 243"
+    },
+    {
+      "mohawk": "Teyo'wáh rahyó:'itsis",
+      "english": "Salt pork",
+      "category": "food",
+      "notes": "Source: Handwritten notes p. 243"
+    },
+    {
+      "mohawk": "Tekana'tará:sera",
+      "english": "Sandwich",
+      "category": "food",
+      "notes": "Source: Handwritten notes p. 243"
+    },
+    {
+      "mohawk": "Kahneká:kon",
+      "english": "Soda pop",
+      "category": "food",
+      "notes": "Source: Handwritten notes p. 243"
+    },
+    {
+      "mohawk": "Wahseriyé:to",
+      "english": "Spaghetti",
+      "category": "food",
+      "notes": "Source: Handwritten notes p. 243"
+    },
+    {
+      "mohawk": "Yontekhwakon'ohstáhkwa",
+      "english": "Spices",
+      "category": "food",
+      "notes": "Source: Handwritten notes p. 243"
+    },
+    {
+      "mohawk": "Tyohontéhsha",
+      "english": "Tea",
+      "category": "food",
+      "notes": "Source: Handwritten notes p. 243"
+    },
+    {
+      "mohawk": "Watená'taratsha'áhton",
+      "english": "Toast",
+      "category": "food",
+      "notes": "Source: Handwritten notes p. 243"
+    },
+    {
+      "mohawk": "Ohontehshóni:'a",
+      "english": "Vegetables",
+      "category": "food",
+      "notes": "Source: Handwritten notes p. 243"
+    },
+    {
+      "mohawk": "Teyohnekahyó:'itsis",
+      "english": "Vinegar",
+      "category": "food",
+      "notes": "Source: Handwritten notes p. 243"
+    },
+    {
+      "mohawk": "Wahyá:'nis",
+      "english": "Watermelon",
+      "category": "food",
+      "notes": "Source: Handwritten notes p. 243"
+    },
+    {
+      "mohawk": "Katsi'tsyo'kéri",
+      "english": "Wine",
+      "category": "food",
+      "notes": "Source: Handwritten notes p. 243"
+    },
+    {
+      "mohawk": "Kanonten:tskó:wa",
+      "english": "Pineapple",
+      "category": "food",
+      "notes": "Source: Handwritten notes p. 242"
+    },
+    {
+      "mohawk": "Othehsera",
+      "english": "Flour",
+      "category": "food",
+      "notes": "Source: Handwritten notes p. 242"
+    },
+    {
+      "mohawk": "Tekarihstó:iyen",
+      "english": "Fried bread / scone",
+      "category": "food",
+      "notes": "Source: Handwritten notes p. 242"
+    },
+    {
+      "mohawk": "Kahnenna'takeri:sten",
+      "english": "Fried potatoes",
+      "category": "food",
+      "notes": "Source: Handwritten notes p. 242"
+    },
+    {
+      "mohawk": "Wahyákeri",
+      "english": "Fruit juice / apple cider",
+      "category": "food",
+      "notes": "Source: Handwritten notes p. 242"
+    },
+    {
+      "mohawk": "Teyokháhon",
+      "english": "Garlic",
+      "category": "food",
+      "notes": "Source: Handwritten notes p. 242"
+    },
+    {
+      "mohawk": "Kén:'ye",
+      "english": "Gravy",
+      "category": "food",
+      "notes": "Source: Handwritten notes p. 242"
+    },
+    {
+      "mohawk": "Teka'wahrha'rihton",
+      "english": "Hamburg (ground meat)",
+      "category": "food",
+      "notes": "Source: Handwritten notes p. 242"
+    },
+    {
+      "mohawk": "Awenhétsha",
+      "english": "Hot dog / baloney / sausage",
+      "category": "food",
+      "notes": "Source: Handwritten notes p. 242"
+    },
+    {
+      "mohawk": "Kanennyo'kóhare",
+      "english": "Ice cream",
+      "category": "food",
+      "notes": "Source: Handwritten notes p. 242"
+    },
+    {
+      "mohawk": "Kahnekinekéhston",
+      "english": "Juice (squeezed)",
+      "category": "food",
+      "notes": "Source: Handwritten notes p. 242"
+    },
+    {
+      "mohawk": "Tekara'wihstá:'sere",
+      "english": "Lasagna",
+      "category": "food",
+      "notes": "Source: Handwritten notes p. 242"
+    },
+    {
+      "mohawk": "Teyohyahyó:'itsis",
+      "english": "Lemon",
+      "category": "food",
+      "notes": "Source: Handwritten notes p. 242"
+    },
+    {
+      "mohawk": "Kahneká'shá:tshe",
+      "english": "Liquor",
+      "category": "food",
+      "notes": "Source: Handwritten notes p. 242"
+    },
+    {
+      "mohawk": "Wáhta' óhses",
+      "english": "Maple syrup",
+      "category": "food",
+      "notes": "Source: Handwritten notes p. 242"
+    },
+    {
+      "mohawk": "Awerhóhsera",
+      "english": "Mushroom(s)",
+      "category": "food",
+      "notes": "Source: Handwritten notes p. 242"
+    },
+    {
+      "mohawk": "Otsíhskwa",
+      "english": "Oatmeal / cornmush / pudding",
+      "category": "food",
+      "notes": "Source: Handwritten notes p. 242"
+    },
+    {
+      "mohawk": "Á:nenks",
+      "english": "Onions / bulb",
+      "category": "food",
+      "notes": "Source: Handwritten notes p. 242"
+    },
+    {
+      "mohawk": "O'nyónkhseri",
+      "english": "Onions (green)",
+      "category": "food",
+      "notes": "Source: Handwritten notes p. 242"
+    },
+    {
+      "mohawk": "Otsí'nekwar niwahyó:ten",
+      "english": "Orange",
+      "category": "food",
+      "notes": "Source: Handwritten notes p. 242"
+    },
+    {
+      "mohawk": "Ora'wíhsta",
+      "english": "Pancakes",
+      "category": "food",
+      "notes": "Source: Handwritten notes p. 242"
+    },
+    {
+      "mohawk": "Tekakenhwhara'ión",
+      "english": "Peach(es)",
+      "category": "food",
+      "notes": "Source: Handwritten notes p. 242"
+    },
+    {
+      "mohawk": "Teyotskara'kó:wa",
+      "english": "Pepper",
+      "category": "food",
+      "notes": "Source: Handwritten notes p. 242"
+    },
+    {
+      "mohawk": "Teyonon'onserahyó:'itsis",
+      "english": "Pickles (dill)",
+      "category": "food",
+      "notes": "Source: Handwritten notes p. 242"
+    }
+  ]
+}
