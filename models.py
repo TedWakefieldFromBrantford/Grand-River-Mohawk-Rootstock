@@ -19,6 +19,7 @@ class Vocab(db.Model):
     category = db.Column(db.String, default="")          # color / animal / household
     class_or_stem = db.Column(db.String, default="")      # red / blue / purple
     notes = db.Column(db.Text, default="")
+    tags = db.relationship("Tag", secondary="vocab_tag", backref="vocabs")
 
 class Verb(db.Model):
     __tablename__ = "verb"
@@ -26,8 +27,10 @@ class Verb(db.Model):
     lesson_id = db.Column(db.Integer, db.ForeignKey("lesson.id"), nullable=True)
     root = db.Column(db.String, nullable=False)
     gloss = db.Column(db.String, nullable=False)
+    stem_class = db.Column(db.String, default="C")
     forms_json = db.Column(db.JSON, nullable=False)      # {"1sg": "...", "3f": "...", ...}
     notes = db.Column(db.Text, default="")
+    tags = db.relationship("Tag", secondary="verb_tag", backref="verbs")
 
 class Item(db.Model):
     __tablename__ = "item"
@@ -134,3 +137,43 @@ class SentenceTemplate(db.Model):
     # The order of words in Mohawk vs English
     # e.g. {"mohawk": ["verb", "object"], "english": ["subject", "verb", "object"]}
     structure_json = db.Column(db.JSON, nullable=False)
+
+# Nov 6.  Active verbs (Unit 5)
+
+class Morpheme(db.Model):
+    """
+    The building blocks of a word (prefixes, roots, suffixes).
+    """
+    __tablename__ = "morpheme"
+    id = db.Column(db.Integer, primary_key=True)
+    # e.g., "k-", "-khonn-", "-is", "wah-", "te-"
+    text = db.Column(db.String, nullable=False)
+    # e.g., "prefix", "root", "suffix", "preprefix"
+    type = db.Column(db.String, nullable=False) 
+    # e.g., "1sg", "habitual_marker", "past_marker"
+    grammatical_function = db.Column(db.String, nullable=True)
+    # Optional: "Red", "Blue", "Purple" to match textbook color coding
+    color_code = db.Column(db.String, nullable=True)
+    
+    # For the UI: How to explain this piece
+    ui_label = db.Column(db.String, nullable=True) # e.g., "1st Person Singular"
+    notes = db.Column(db.Text, default="")
+
+class FormMorpheme(db.Model):
+    """
+    The bridge: Links a specific VocabForm to the morphemes that built it.
+    This is the "Trace" the UI will read to explain how the word is built.
+    """
+    __tablename__ = "form_morpheme"
+    id = db.Column(db.Integer, primary_key=True)
+    vocab_form_id = db.Column(db.Integer, db.ForeignKey("vocab_form.id"), nullable=False)
+    morpheme_id = db.Column(db.Integer, db.ForeignKey("morpheme.id"), nullable=False)
+    
+    # Order of the morpheme in the word (1 = first prefix, 2 = root, 3 = suffix, etc.)
+    sequence_order = db.Column(db.Integer, nullable=False) 
+    
+    # Phonological notes specific to this usage (e.g., "vowel drop", "epenthesis")
+    phonological_note = db.Column(db.Text, default="")
+
+    vocab_form = db.relationship("VocabForm", backref="morpheme_trace")
+    morpheme = db.relationship("Morpheme")

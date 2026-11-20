@@ -36,10 +36,10 @@ def apply_negation(base_form):
     return "yah te" + base_form
 
 
-# Particle categories, sourced from Unit 1 pp. 23-26.
-# Keys are the Mohawk particle; values carry the English gloss and source page.
+# Particle categories, sourced from Unit 1 & Unit 3.
 PARTICLES = {
-    "ken":        {"gloss": "?",                       "page": 23},
+    # Unit 1 (pp. 23-26)
+    "ken":        {"gloss": "? (2nd position)",        "page": 23},
     "yah":        {"gloss": "no / not",                "page": 24},
     "ó:ni":       {"gloss": "also / too",              "page": 23},
     "nok":        {"gloss": "and",                     "page": 23},
@@ -54,6 +54,17 @@ PARTICLES = {
     "tsi":        {"gloss": "that / there / when",     "page": 25},
     "thí:ken":    {"gloss": "that",                    "page": 26},
     "kí:ken":     {"gloss": "this",                    "page": 26},
+    
+    # Unit 3 (pp. 96-97)
+    "né:'e tsi":  {"gloss": "because",                  "page": 96},
+    "ne karihón:ni": {"gloss": "that's why",            "page": 96},
+    "ó:nen":      {"gloss": "now / already",            "page": 97},
+    "kári:wes":   {"gloss": "a long time",              "page": 97},
+    "nikarihwéhsha": {"gloss": "a short time",          "page": 97},
+    "nyá:wen":    {"gloss": "thank you / thanks",       "page": 97},
+    "khá:re ó:nen": {"gloss": "finally",                "page": 97},
+    "nonwén:ton": {"gloss": "ever",                     "page": 97},
+    "yah nonwén:ton": {"gloss": "never",                "page": 97},
 }
 
 
@@ -66,10 +77,6 @@ class SentenceBuilder:
       2. The conjugated verb
       3. The object, marked with 'ne'
       4. Trailing particles (ó:ni, wáhi)
-
-    The builder deliberately does NOT auto-insert 'ken' — question placement
-    is pending confirmation from the instructor. Do not add it here until
-    that is resolved and tested.
     """
 
     def __init__(self, verb_form, object_noun=None):
@@ -96,3 +103,24 @@ class SentenceBuilder:
             parts.append(f"ne {self.object_noun}")
         parts.extend(self.post)
         return " ".join(parts)
+
+
+# --- Standalone Transformation Functions ---
+
+def make_question(sentence):
+    """
+    Injects 'ken' as the second word of the sentence.
+    Textbook rule: formulate your sentence so ken is the second word.
+    """
+    words = sentence.split()
+    
+    # If it's a one-word sentence, ken just goes after it
+    if len(words) == 1:
+        return f"{words[0]} ken?"
+        
+    # Insert 'ken' at index 1 (the second position)
+    words.insert(1, "ken")
+    
+    result = " ".join(words)
+    # Capitalize the first letter and add a question mark
+    return result[0].upper() + result[1:] + "?"

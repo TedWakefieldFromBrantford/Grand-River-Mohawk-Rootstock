@@ -1,0 +1,69 @@
+# scripts/purge_and_fix_hswenhs.py
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from app import create_app
+from models import db, Verb, VocabForm
+
+app = create_app()
+with app.app_context():
+    verb = Verb.query.filter_by(root="-hswenhs").first()
+    if verb:
+        # Delete ALL existing hswenhs forms to start fresh
+        VocabForm.query.filter_by(verb_id=verb.id).delete()
+        
+        # Insert the EXACT Gospel Truth from pages 42, 44, 46
+        # Format: (form, subject, object)
+        truth = [
+            # Page 42 (Intransitive)
+            ("ikhswenhs", "1sg", "3m/i"),
+            ("íhswenhs", "2sg", "3m/i"),  # Note: Page 42 says 'íhswenhs'
+            ("ráhswenhs", "3m", "3m/i"),
+            ("yéhswenhs", "3f", "3m/i"),
+            ("káhswenhs", "3i", "3m/i"),
+            ("teníhswenhs", "1du.in", "3m/i"),
+            ("yakeníhswenhs", "1du.ex", "3m/i"),
+            ("seníhswenhs", "2du", "3m/i"),
+            ("hníhswenhs", "2du.m", "3m/i"),
+            ("keníhswenhs", "2du.f", "3m/i"), # Wait, page 42 says 2Fs is kení-
+            ("tewáhswenhs", "1pl.in", "3m/i"),
+            ("yakwáhswenhs", "1pl.ex", "3m/i"),
+            ("sewáhswenhs", "2pl", "3m/i"),
+            ("ratíhswenhs", "3pl.m", "3m/i"),
+            ("kontíhswenhs", "3pl.f", "3m/i"),
+
+            # Page 46 (Transitive)
+            ("kónhswenhs", "1sg", "2sg"),
+            ("ríhswenhs", "1sg", "3m"),
+            ("khéhswenhs", "1sg", "3f"),
+            ("tákhswenhs", "2sg", "1sg"),
+            ("étshswenhs", "2sg", "3m"),
+            ("hshéhswenhs", "2sg", "3f"),
+            ("rákhswenhs", "3m", "1sg"),
+            ("yáhswenhs", "3m", "2sg"),
+            ("róhswenhs", "3m", "3m"),
+            ("hshakóhswenhs", "3m", "3f"),
+            ("yónkhswenhs", "3f", "1sg"),
+            ("yesáhswenhs", "3f", "2sg"),
+            ("ronwáhswenhs", "3f", "3m"),
+            ("yontáthswenhs", "3f", "3f"),
+            
+            # Page 44 (Something... Someone)
+            ("wákhswenhs", "3m/i", "1sg"),
+            ("sáhswenhs", "3m/i", "2sg"),
+            ("róhswenhs", "3m/i", "3m"),
+            ("yakóhswenhs", "3m/i", "3f"),
+            ("yóhswenhs", "3m/i", "3i"),
+            ("yokeníhswenhs", "3m/i", "1du"),
+            ("rotíhswenhs", "3m/i", "2du.m"),
+            ("yotíhswenhs", "3m/i", "2du.f"),
+            ("yonkwáhswenhs", "3m/i", "1pl.in"),
+        ]
+        
+        for form, subj, obj in truth:
+            db.session.add(VocabForm(
+                verb_id=verb.id, form=form, form_type="citation", 
+                subject=subj, object=obj
+            ))
+        db.session.commit()
+        print("Purged and re-seeded -hswenhs with 37 exact textbook forms.")

@@ -42,6 +42,7 @@ def test_take_prefix():
     assert apply_negation("takenòn:we's") == "yah tehskenòn:we's"
 
 def test_tak_prefix():
+
     # p. 51: tak- -> tehsk-
     assert apply_negation("takwayenté:ri") == "yah tehskwayenté:ri"
 
@@ -77,3 +78,12 @@ def test_particles_have_page_cites():
     # Provenance gate: no particle ships without a textbook page.
     for k, v in PARTICLES.items():
         assert "page" in v and isinstance(v["page"], int)
+
+def test_ken_second_word():
+    # p. 97 example: "Nonwén:ton ken sanyá:kon?"
+    sentence = "nonwén:ton sanyá:kon"
+    assert make_question(sentence) == "Nonwén:ton ken sanyá:kon?"
+
+    # Our generated sentence
+    sentence2 = "yakonòn:we's ne érhar"
+    assert make_question(sentence2) == "Yakonòn:we's ken ne érhar?"

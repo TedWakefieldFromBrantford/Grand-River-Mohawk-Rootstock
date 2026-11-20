@@ -16,7 +16,7 @@
 <h1>{% if lesson %}Edit Lesson: Week {{ lesson.week_number }}{% else %}Edit All Data{% endif %}</h1>
 <p>
   <a href="{{ url_for('quiz', lesson_id=lesson.id) if lesson else '#' }}">Go to Quiz →</a> | 
-  <a href="{{ url_for('index') }}">Home</a>
+  <a href="{{ url_for('main.index') }}">Home</a>
 </p>
 
 <form method="POST" class="admin-form">
